@@ -1,23 +1,20 @@
-NAME = libmymastermind.a
-SRC = fonction.c
+NAME = my_mastermind
+SRC = my_mastermind.c fonction.c
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
-TEST = my_mastermind.exe
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+	gcc $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c
+%.o: %.c fonction.h
 	gcc $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
-
 fclean: clean
-	rm -f $(NAME) $(TEST)
-
+	rm -f $(NAME)
 re: fclean all
 
 .PHONY: all clean fclean re
