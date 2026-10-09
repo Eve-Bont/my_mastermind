@@ -1,5 +1,4 @@
 #include "fonction.h"
-//gcc -Wall -Wextra -Werror my_mastermind.c -L. -lmymastermind -o my_mastermind.exe
 
 int main(int argc, char** argv) {
     int code[4];
