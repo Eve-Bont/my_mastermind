@@ -4,72 +4,73 @@
 
 ## Task
 
-The goal of this project is to recreate the Mastermind game in C.
-The player must guess a secret code made of four distinct digits, ranging from 0 to 8, within a limited number of attempts. After each guess, the program provides feedback to help the player find the correct code.
+The goal of this project is to recreate the Mastermind game in C. The player must guess a secret code within a limited number of attempts.
 
 ## Description
 
-The program generates a random secret code or accepts a custom code provided through command-line arguments.
-The player has 10 attempts by default, but this number can be changed using the `-t` option.
-After each guess, the program displays:
-* **Well placed pieces:** the number of digits that are correct and in the right position.
-* **Misplaced pieces:** the number of correct digits that are in the wrong position.
-The program validates each guess to ensure that it contains exactly four distinct digits between 0 and 8.
-The game ends when the player finds the secret code or runs out of attempts.
+The program generates a secret code consisting of four distinct digits, each ranging from `0` to `8`.
+
+After each guess, the program indicates:
+* The number of well-placed pieces: digits that are correct and in the correct position.
+* The number of misplaced pieces: correct digits that are in the wrong position.
+
+The player has 10 attempts by default to guess the code.
+
+The program also supports command-line options:
+* `-c`: Sets a custom secret code.
+* `-t`: Sets the maximum number of attempts.
+
+The player's input is checked to ensure that it contains four distinct digits in the allowed range.
 
 ## Installation
 
-Compile the project using the provided Makefile:
+Clone the repository and navigate to the project directory.
+
+Compile the program using the provided Makefile:
 ```bash
 make
 ```
-To remove the compiled object files:
+
+To remove the generated object files:
 ```bash
 make clean
 ```
+
 To remove all generated files, including the executable:
 ```bash
 make fclean
 ```
-To rebuild the project from scratch:
 
+To clean and recompile the project:
 ```bash
 make re
 ```
 
 ## Usage
 
-Run the program with the default settings:
+Start the game with a randomly generated code and 10 attempts:
 ```bash
 ./my_mastermind
 ```
-Run the program with a custom secret code:
+
+Set a custom secret code:
 ```bash
 ./my_mastermind -c 1234
 ```
-Set a custom number of attempts:
+
+Set the maximum number of attempts:
 ```bash
 ./my_mastermind -t 5
 ```
-Use both options together:
+
+Combine both options:
 ```bash
 ./my_mastermind -c 1234 -t 5
 ```
-During the game, enter a four-digit guess and press Enter. The program will tell you how many digits are well placed and misplaced.
 
-Example:
-```text
-Will you find the secret code?
-Please enter a valid guess
----
-Round 0
-1234
-Well placed pieces: 2
-Misplaced pieces: 1
-```
-
-If you find the secret code, the program displays a victory message.
+Follow the instructions displayed in the terminal to enter your guesses.
 
 ### The Core Team
 
-Made at Qwasar SV -- Software Engineering School
+<span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
+<span><img alt='Qwasar SV -- Software Engineering School Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px' /></span>
